@@ -18,7 +18,7 @@
         </a>
         }
       </li>
-      @for(pageIndex <- (1 to 20)) {
+      @for(pageIndex <- (1 to 30)) {
       <li><a href="@routes.Application.similarityGallery(isSupervised, pageIndex, pageGroup)">@pageIndex</a></li>
       }
       @if(pageGroup < pageGroups) {

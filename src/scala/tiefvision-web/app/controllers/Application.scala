@@ -13,12 +13,12 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 class Application extends Controller {
 
-  lazy val ImagesGrouped = Images.toList.grouped(20).toList
+  lazy val ImagesGrouped = Images.toList.grouped(40).toList
 
   def index = editBoundingBox(randomImage)
 
   def similarityGallery(isSupervised: Boolean, page: Int = 1, pageGroup: Int = 1) = Action {
-    Ok(views.html.similarityGallery(ImagesGrouped(((pageGroup - 1) * 20) + (page - 1)), isSupervised, page, pageGroup, ImagesGrouped.size / 20))
+    Ok(views.html.similarityGallery(ImagesGrouped(((pageGroup - 1) * 40) + (page - 1)), isSupervised, page, pageGroup, ImagesGrouped.size / 40))
   }
 
   def similarityFinderUploadForm() = Action {

@@ -24,7 +24,8 @@ footer {
 }
 
 .img-thumbnail {
-  width: 337px;
+  width: 125px; /* 337px is default */
+  height: 125px;
   margin: 5px;
 }
 
