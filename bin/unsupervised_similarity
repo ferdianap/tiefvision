@@ -5,6 +5,7 @@ trap 'exit 1' ERR
 ROOT=$(realpath $(dirname ${BASH_SOURCE[0]})/..)
 APP_FOLDER=$ROOT/src/torch
 
+IMAGES=/home/askserver/tiefvision/resources/images_db/master
 ENCODED_IMAGES=/tmp/tiefvision/images
 K_NEAREST_NEIGHBORS=2500
 CONFIG=$APP_FOLDER/config.lua
@@ -26,8 +27,8 @@ init_cli_args () {
         --k-nearest-neighbors) K_NEAREST_NEIGHBORS="$2"; shift; ;;
         --config) CONFIG="$2"; shift; ;;
         *)
-          if [ -z "$IMAGES" ]; then IMAGES=$1
-          else usage; fi
+          #if [ -z "$IMAGES" ]; then IMAGES=$1
+          #else usage; fi
         ;;
     esac
 
